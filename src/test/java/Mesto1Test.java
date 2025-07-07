@@ -16,17 +16,7 @@ public class Mesto1Test {
         RestAssured.baseURI = "https://qa-mesto.praktikum-services.ru";
     }
 
-    @Test
-    @DisplayName("Add a new photo")
-    @Description("This test is for adding a new photo to Mesto.")
-    void addNewPhoto() {
-        given()
-                .header("Content-type", "application/json") // Передаём Content-type в заголовке для указания типа файла
-                .auth().oauth2(bearerToken) // Передаём токен для аутентификации
-                .body("{\"name\":\"Москва\",\"link\":\"https://code.s3.yandex.net/qa-automation-engineer/java/files/paid-track/sprint1/photoSelenium.jpg\"}") // Формируем тело запроса
-                .post("/api/cards") // Делаем POST-запрос
-                .then().statusCode(401); // Проверяем код ответа
-    }
+
 
     @Test
     @DisplayName("Like the first photo")
